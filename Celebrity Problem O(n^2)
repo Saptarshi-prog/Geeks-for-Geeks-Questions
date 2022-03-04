@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb 18 19:49:57 2022
+
+@author: Saptarshi
+"""
+MATRIX = [ [ 0, 0, 1, 0 ],
+           [ 0, 0, 1, 0 ],
+           [ 0, 1, 0, 0 ],
+           [ 0, 0, 1, 0 ] ]
+n = len(MATRIX[1])
+IN = [0]*4
+OUT = [0]*4
+count = 0
+
+for i in range(n):
+    for j in range(n):
+        if MATRIX[i][j]==1:
+            IN[j] +=1
+            OUT[i] = 1
+        
+for k in range(n):
+    if OUT[k] == 0 and IN[k]==n-1:
+        print("The celebrity is: "+str(k))
+        count=1
+    
+if count!=1:
+    print('there is no celebrity')
+
+
